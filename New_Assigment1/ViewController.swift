@@ -109,12 +109,13 @@ class ViewController: UIViewController {
     // A2 # 10 (Not completed)
     @IBAction func backBTNPressed(sender: UIButton) {
         
-//        if userIsCurrentlyTypping {
-//            
-//            
-//        } else {
-//            
-//            
-//        }
-//    }
+        //        if userIsCurrentlyTypping {
+        //
+        //
+        //        } else {
+        //
+        //
+        //        }
+        //    }
+    }
 }

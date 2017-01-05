@@ -59,8 +59,6 @@ class ViewController: UIViewController {
             
             upperDisplay.text = brain.description + "..."
         }
-        
-        
     }
     
     @IBAction private func performOperation(sender: UIButton) {
@@ -68,6 +66,9 @@ class ViewController: UIViewController {
         if userIsCurrentlyTypping {
             
             brain.setOperand(operand: displayValue)
+            
+            upperDisplay.text = brain.description
+            display.text = brain.description
             
             userIsCurrentlyTypping = false
         }
@@ -80,11 +81,40 @@ class ViewController: UIViewController {
         displayValue = brain.result
     }
     
-    // Success (8)
+    // A1 # 8
     @IBAction private func touchClear(sender: UIButton) {
-
+        
         display.text = " "
         upperDisplay.text = " "
     }
+    
+    // A2 # 8
+    @IBAction func setValue(sender: UIButton) {
+        
+        brain.variableValues["M"] = displayValue
+        
+        displayValue = brain.result
+        
+        print(displayValue)
+    }
+    
+    @IBAction func notSetValue(sender: UIButton) {
+        
+        brain.setOperand(variableName: "M")
+        displayValue = brain.result
+        
+        print(displayValue)
+    }
+    
+    // A2 # 10 (Not completed)
+    @IBAction func backBTNPressed(sender: UIButton) {
+        
+//        if userIsCurrentlyTypping {
+//            
+//            
+//        } else {
+//            
+//            
+//        }
+//    }
 }
-

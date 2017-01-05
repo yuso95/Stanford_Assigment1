@@ -10,7 +10,14 @@ import Foundation
 
 class CalculatorBrain {
     
-    // Success (6)
+    // Assignment 2
+    typealias PropertyList = AnyObject
+    
+    // Assignment 2
+    private var internalProgram = [AnyObject]()
+    private var symbolDescription: String?
+    
+    // A1 # 6
     var isPartialResult: Bool {
         
         if pending != nil {
@@ -25,7 +32,26 @@ class CalculatorBrain {
     var description: String {
         get {
             
-            return "\(result)"
+            var description = "\(accumulator)"
+            
+            if pending != nil {
+                
+                if let safeSymbol = symbolDescription {
+                    
+                    description += "\(safeSymbol)"
+                                        
+                    if variableValues["M"] == 0 {
+                        
+                        description += "M"
+                    } else {
+                        
+                        description += "M"
+                    }
+                }
+                
+            }
+            
+            return description
         }
     }
     
@@ -46,7 +72,14 @@ class CalculatorBrain {
         "÷": Operation.BinaryOperation({ number1, number2 in number1 / number2 }),
         "+": Operation.BinaryOperation({ number1, number2 in number1 + number2 }),
         "-": Operation.BinaryOperation({ number1, number2 in number1 - number2 }),
-        ".": Operation.BinaryOperation({ number1, number2 in number1 + (number2 * 10 / 100) })
+        ".": Operation.BinaryOperation({ number1, number2 in number1 + (number2 * 10 / 100) }),
+        "=": Operation.Equals
+    ]
+    
+    // A2 # 4
+    var variableValues: Dictionary<String, Double> = [
+        
+        "M": 0.0
     ]
     
     private enum Operation {
@@ -78,16 +111,72 @@ class CalculatorBrain {
     var result: Double {
         get {
             
+            if let value = variableValues["M"], value == 0.0 {
+                
+                accumulator += value
+            }
+            
             return accumulator
         }
+    }
+    
+    // Assignment 2
+    var program: PropertyList {
+        get {
+            
+            return internalProgram as CalculatorBrain.PropertyList
+        }
+        set {
+            
+            clear()
+            
+            if let arrayOfObj = newValue as? [AnyObject] {
+                
+                for obj in arrayOfObj {
+                    
+                    if let operand = obj as? Double {
+                        
+                        setOperand(operand: operand)
+                    } else if let operation = obj as? String {
+                        
+                        performOperation(symbol: operation)
+                    }
+                }
+            }
+        }
+    }
+    
+    private func clear() {
+        
+        accumulator = 0.0
+        pending = nil
+        internalProgram.removeAll()
     }
     
     func setOperand(operand: Double) {
         
         accumulator = operand
+        
+        internalProgram.append(operand as AnyObject)
+    }
+    
+    // A2 #2
+    func setOperand(variableName: String) {
+        
+        if let value = variableValues["M"] {
+            
+            accumulator = value
+        }
+        
+        // A2 #7
+        internalProgram.append(variableName as AnyObject)
     }
     
     func performOperation(symbol: String) {
+        
+        internalProgram.append(symbol as AnyObject)
+        
+        symbolDescription = symbol
         
         if let operation = operations[symbol] {
             
@@ -109,7 +198,6 @@ class CalculatorBrain {
         }
     }
 }
-
 
 
 

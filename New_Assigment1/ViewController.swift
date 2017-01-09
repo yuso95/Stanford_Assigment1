@@ -8,6 +8,8 @@
 
 import UIKit
 
+var calculatorCount = 0
+
 class ViewController: UIViewController {
     
     // Variables and Constants
@@ -59,6 +61,26 @@ class ViewController: UIViewController {
             
             upperDisplay.text = brain.description + "..."
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        calculatorCount += 1
+        print("Loaded up a new calculator, calculatorCount is: \(calculatorCount)")
+        
+        brain.changeMyDisplayTextColor(symbol: "E") { [weak weakme = self] in
+            
+            weakme?.display.textColor = UIColor.red
+            return sqrt($0)
+        }
+    }
+    
+    deinit {
+        
+        calculatorCount -= 1
+        print("Left the heap, calculatorCount is: \(calculatorCount)")
+        
     }
     
     @IBAction private func performOperation(sender: UIButton) {

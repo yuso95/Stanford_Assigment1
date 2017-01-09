@@ -55,6 +55,11 @@ class CalculatorBrain {
         }
     }
     
+    func changeMyDisplayTextColor(symbol: String, operation: @escaping (Double) -> Double) { // I wasn't expecting @esaping
+        
+        operations[symbol] = Operation.UnaryOperation(operation)
+    }
+    
     private var accumulator = 0.0
     
     private var operations: [String: Operation] = [

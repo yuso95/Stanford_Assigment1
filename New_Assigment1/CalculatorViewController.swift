@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CalculatorViewController.swift
 //  New_Assigment1
 //
 //  Created by Younoussa Ousmane Abdou on 12/20/16.
@@ -10,7 +10,7 @@ import UIKit
 
 var calculatorCount = 0
 
-class ViewController: UIViewController {
+class CalculatorViewController: UIViewController {
     
     // Variables and Constants
     private var userIsCurrentlyTypping = false

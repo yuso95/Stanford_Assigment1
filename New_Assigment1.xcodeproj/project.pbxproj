@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D57618F41E248966008BEDA7 /* GraphingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57618F31E248966008BEDA7 /* GraphingView.swift */; };
 		D57618F61E248993008BEDA7 /* GraphingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57618F51E248993008BEDA7 /* GraphingViewController.swift */; };
+		D5787C8B1E25C648004A9B19 /* AxesDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5787C8A1E25C648004A9B19 /* AxesDrawer.swift */; };
 		D5A23D381E09AA64009B39E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A23D371E09AA64009B39E1 /* AppDelegate.swift */; };
 		D5A23D3A1E09AA64009B39E1 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A23D391E09AA64009B39E1 /* CalculatorViewController.swift */; };
 		D5A23D3D1E09AA64009B39E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5A23D3B1E09AA64009B39E1 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		D57618F31E248966008BEDA7 /* GraphingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphingView.swift; sourceTree = "<group>"; };
 		D57618F51E248993008BEDA7 /* GraphingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphingViewController.swift; sourceTree = "<group>"; };
+		D5787C8A1E25C648004A9B19 /* AxesDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxesDrawer.swift; sourceTree = "<group>"; };
 		D5A23D341E09AA64009B39E1 /* New_Assigment1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = New_Assigment1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5A23D371E09AA64009B39E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5A23D391E09AA64009B39E1 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				D57618F31E248966008BEDA7 /* GraphingView.swift */,
+				D5787C8A1E25C648004A9B19 /* AxesDrawer.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 					D5A23D331E09AA64009B39E1 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 7HAUD8EZY3;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -183,6 +187,7 @@
 				D5A23D3A1E09AA64009B39E1 /* CalculatorViewController.swift in Sources */,
 				D57618F61E248993008BEDA7 /* GraphingViewController.swift in Sources */,
 				D5A23D381E09AA64009B39E1 /* AppDelegate.swift in Sources */,
+				D5787C8B1E25C648004A9B19 /* AxesDrawer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

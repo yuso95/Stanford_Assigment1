@@ -413,11 +413,25 @@
                         <viewControllerLayoutGuide type="top" id="cim-mN-ART"/>
                         <viewControllerLayoutGuide type="bottom" id="HLv-Xo-Of4"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="yEg-Dq-RxT" customClass="GraphingView" customModule="New_Assigment1" customModuleProvider="target">
+                    <view key="view" contentMode="redraw" id="yEg-Dq-RxT" customClass="GraphingView" customModule="New_Assigment1" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="scale">
+                                <real key="value" value="0.20000000000000001"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="redColor">
+                                <color key="value" red="0.15686274509803921" green="0.16470588235294117" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
+                    <connections>
+                        <outlet property="graphingView" destination="yEg-Dq-RxT" id="OQU-He-UIG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CN8-fA-F1R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

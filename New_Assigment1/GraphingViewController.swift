@@ -10,6 +10,23 @@ import UIKit
 
 class GraphingViewController: UIViewController {
 
+    // Variables/Constants/Computed Properties
+    
+    // Outlets
+    @IBOutlet private weak var graphingView: GraphingView! {
+        
+        didSet {
+            
+            let pinchGesture = UIPinchGestureRecognizer(target: graphingView, action: #selector(GraphingView.changeScale(recognizer:)))
+            graphingView.addGestureRecognizer(pinchGesture)
+            
+        }
+    }
+    
+
+    // Actions
+    
+    
     /*
     // MARK: - Navigation
 

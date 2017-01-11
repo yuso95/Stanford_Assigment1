@@ -32,7 +32,7 @@ class CalculatorViewController: UIViewController {
     // Outlets
     @IBOutlet private weak var display: UILabel!
     @IBOutlet private weak var upperDisplay: UILabel!
-    
+        
     // Actions
     @IBAction private func touchDigit(sender: UIButton) {
         
